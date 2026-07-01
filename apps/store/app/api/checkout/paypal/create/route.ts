@@ -4,6 +4,7 @@
 
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
+import type { OrderItem } from "@repo/database";
 import { db } from "@/lib/db";
 import { createPayPalOrder } from "@repo/paypal";
 
@@ -40,7 +41,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
   try {
     const paypalOrder = await createPayPalOrder({
       orderId: order.id,
-      items: order.items.map((i) => ({
+      items: order.items.map((i: OrderItem) => ({
         name: i.productName,
         quantity: i.quantity,
         unitPrice: Number(i.unitPrice),

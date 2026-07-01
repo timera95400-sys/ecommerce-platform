@@ -4,6 +4,7 @@
 
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
+import type { OrderItem } from "@repo/database";
 import { db } from "@/lib/db";
 import { capturePayPalOrder } from "@repo/paypal";
 import { sendOrderConfirmationToCustomer, sendNewOrderAlertToMerchant } from "@/lib/email";
@@ -91,7 +92,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
         orderNumber: updatedOrder.orderNumber,
         customerEmail,
         customerName,
-        items: updatedOrder.items.map((i) => ({
+        items: updatedOrder.items.map((i: OrderItem) => ({
           name: i.productName,
           quantity: i.quantity,
           unitPrice: Number(i.unitPrice),
@@ -105,7 +106,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
         orderNumber: updatedOrder.orderNumber,
         customerEmail,
         customerName,
-        items: updatedOrder.items.map((i) => ({
+        items: updatedOrder.items.map((i: OrderItem) => ({
           name: i.productName,
           quantity: i.quantity,
           unitPrice: Number(i.unitPrice),

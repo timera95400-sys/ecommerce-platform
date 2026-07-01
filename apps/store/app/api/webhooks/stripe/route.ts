@@ -6,6 +6,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { constructStripeEvent, handleStripeEvent } from "@repo/stripe";
 import type Stripe from "stripe";
+import type { OrderItem } from "@repo/database";
 import { db } from "@/lib/db";
 import { sendOrderConfirmationToCustomer, sendNewOrderAlertToMerchant, sendOrderStatusUpdate } from "@/lib/email";
 
@@ -55,7 +56,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
           orderNumber: order.orderNumber,
           customerEmail,
           customerName,
-          items: order.items.map((i) => ({
+          items: order.items.map((i: OrderItem) => ({
             name: i.productName,
             quantity: i.quantity,
             unitPrice: Number(i.unitPrice),
@@ -69,7 +70,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
           orderNumber: order.orderNumber,
           customerEmail,
           customerName,
-          items: order.items.map((i) => ({
+          items: order.items.map((i: OrderItem) => ({
             name: i.productName,
             quantity: i.quantity,
             unitPrice: Number(i.unitPrice),

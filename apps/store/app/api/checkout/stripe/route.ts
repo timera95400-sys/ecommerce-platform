@@ -5,6 +5,7 @@
 
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
+import type { OrderItem } from "@repo/database";
 import { db } from "@/lib/db";
 import { createCheckoutSession } from "@repo/stripe";
 
@@ -52,7 +53,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
 
   try {
     const session = await createCheckoutSession({
-      lineItems: order.items.map((item) => ({
+      lineItems: order.items.map((item: OrderItem) => ({
         productId: item.productId ?? "",
         name: item.productName,
         image: item.productImage ?? undefined,
