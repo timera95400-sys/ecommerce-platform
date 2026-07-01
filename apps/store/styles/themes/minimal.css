@@ -1,0 +1,49 @@
+/*
+  TEMPLATE 1 — MINIMAL
+  Style : epure, beaucoup d'espace blanc, lignes fines
+  Ideal pour : mode, cosmetique, lifestyle, papeterie
+  Usage : NEXT_PUBLIC_TEMPLATE=minimal
+*/
+
+:root {
+  /* Couleurs */
+  --color-primary: #111111;
+  --color-primary-hover: #333333;
+  --color-secondary: #f5f5f5;
+  --color-accent: #111111;
+
+  --color-surface: #ffffff;
+  --color-surface-alt: #f9f9f9;
+
+  --color-text-base: #111111;
+  --color-text-muted: #6b7280;
+
+  --color-border: #e5e7eb;
+
+  /* Typographie */
+  --font-heading: "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+
+  /* Spacing */
+  --radius: 0px;
+  --button-radius: 0px;
+}
+
+/* Boutons : angles droits, style minimal */
+button,
+[type="button"],
+[type="submit"] {
+  border-radius: var(--button-radius);
+}
+
+/* Liens nav : pas de soulignement */
+a {
+  text-decoration: none;
+}
+
+/* Inputs : bordure fine */
+input,
+select,
+textarea {
+  border-radius: 0;
+}

@@ -1,0 +1,72 @@
+/*
+  TEMPLATE 3 — BOLD COLOR
+  Style : dynamique, colore, accessible
+  Ideal pour : alimentation, sport accessible, cosmetique colore
+  Usage : NEXT_PUBLIC_TEMPLATE=bold-color
+*/
+
+:root {
+  /* Couleurs — la couleur principale est tres presente */
+  --color-primary: #e63946;
+  --color-primary-hover: #c1121f;
+  --color-secondary: #023e8a;
+  --color-accent: #e63946;
+
+  --color-surface: #ffffff;
+  --color-surface-alt: #f8f9fa;
+
+  --color-text-base: #212529;
+  --color-text-muted: #6c757d;
+
+  --color-border: #dee2e6;
+
+  /* Typographie */
+  --font-heading: "Poppins", system-ui, sans-serif;
+  --font-body: "Poppins", system-ui, sans-serif;
+
+  /* Arrondis */
+  --radius: 4px;
+  --button-radius: 4px;
+}
+
+/* Boutons arrondis */
+button,
+[type="button"],
+[type="submit"] {
+  border-radius: var(--button-radius);
+}
+
+/* Inputs */
+input,
+select,
+textarea {
+  border-radius: var(--radius);
+}
+
+/* Header colore */
+header {
+  background-color: var(--color-primary);
+  border-bottom-color: var(--color-primary-hover);
+}
+
+header a,
+header button,
+header span {
+  color: #ffffff;
+}
+
+header .hover\:text-primary:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Badge count panier */
+header .bg-primary {
+  background-color: #ffffff;
+  color: var(--color-primary);
+}
+
+/* Selection */
+::selection {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}

@@ -1,0 +1,74 @@
+/*
+  TEMPLATE 2 — DARK PREMIUM
+  Style : luxe, sombre, sophistique
+  Ideal pour : bijoux, alcool premium, sport haut de gamme
+  Usage : NEXT_PUBLIC_TEMPLATE=dark-premium
+*/
+
+:root {
+  /* Couleurs */
+  --color-primary: #c9a45c;
+  --color-primary-hover: #b8923e;
+  --color-secondary: #1a1a1a;
+  --color-accent: #c9a45c;
+
+  --color-surface: #0a0a0a;
+  --color-surface-alt: #141414;
+
+  --color-text-base: #f5f5f5;
+  --color-text-muted: #9ca3af;
+
+  --color-border: #2a2a2a;
+
+  /* Typographie */
+  --font-heading: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+
+  /* Espacements */
+  --radius: 0px;
+  --button-radius: 0px;
+}
+
+body {
+  background-color: var(--color-surface);
+  color: var(--color-text-base);
+}
+
+/* Selection de texte */
+::selection {
+  background-color: var(--color-primary);
+  color: #0a0a0a;
+}
+
+/* Scrollbar style sombre */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-surface);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+}
+
+/* Inputs fond sombre */
+input,
+select,
+textarea {
+  background-color: var(--color-surface-alt);
+  color: var(--color-text-base);
+  border-radius: 0;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+/* Details/summary FAQ */
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}

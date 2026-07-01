@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme variables are loaded dynamically via NEXT_PUBLIC_TEMPLATE */
+/* See styles/themes/*.css */
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-surface);
+    color: var(--color-text-base);
+    font-family: var(--font-body), system-ui, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading), system-ui, sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .animate-check-draw {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    animation: checkDraw 0.6s ease-out 0.2s forwards;
+  }
+}
+
+@keyframes checkDraw {
+  to { stroke-dashoffset: 0; }
+}
